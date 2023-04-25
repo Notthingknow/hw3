@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!-- saved from url=(0227)http://localhost:63342/%E6%96%B0%E5%A2%9E%E8%B3%87%E6%96%99%E5%A4%BE/%E6%96%B0%E5%A2%9E%E8%B3%87%E6%96%99%E5%A4%BE/BSNOVA%20-%20%E7%99%BB%E5%85%A5%E8%A8%BB%E5%86%8A.html?_ijt=mf8pdjsl746p2nq8ij1s0klpep&_ij_reload=RELOAD_ON_SAVE -->
+<html lang="zh-TW">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>BSNOVA - 登入註冊</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+</head>
+
+<body>
+<nav>
+    <div id="logo-img">
+        <a href="https://battlespiritsnova.com/index.php">
+            <img src="logo_with_name.png" alt="BSNova Logo">
+        </a>
+    </div>
+    <div id="menu-icon">
+        <i class="fas fa-bars"></i>
+    </div>
+    <ul>
+        <li>
+            <a href="index.php">首頁</a>
+        </li>
+        <li>
+            <a href="meta.php?ref=831121798411">環境分析</a>
+        </li>
+        <li>
+            <a href="decks.php?ref=831121798411">所有卡組</a>
+        </li>
+        <li>
+            <a href="search.php">查卡組牌</a>
+        </li>
+        <li>
+            <a class="active" href="account.php?ref=831121798411">登入註冊</a>
+        </li>
+        <li>
+            <div id="search-icon">
+                <i class="fas fa-search"></i>
+            </div>
+        </li>
+    </ul>
+</nav>
+
+<div id="searchbox_web">
+    <form action="https://battlespiritsnova.com/search.php#anchor" method="GET" name="">
+        <input type="text" name="input_num" placeholder="請輸入卡牌編號  (例如: bs09 x35)" autocomplete="off">
+    </form>
+</div>
+<div id="empty-space-bar"></div>
+<main>
+    <a href="https://battlespiritsnova.com/account.php?ref=427262853965" style="padding-left: 4%">
+        <h2 class="section-heading">登入註冊</h2>
+    </a>
+
+    <div class="content clearfix">
+        <div class="main-content build">
+            <!-- Error Message (if any) -->
+
+
+            <!-- Main Part -->
+
+            <form action="https://battlespiritsnova.com/process/login_process.php" method="post">
+                登入帳戶<br>
+                <input type="text" name="mailuid" class="deck_build_input_name" placeholder="可輸入電郵或用戶名稱"
+                       value="">
+                <br><br>
+
+                用戶密碼<br>
+                <input type="password" name="pwd" class="deck_build_input_name" placeholder="" maxlength="12">
+                <br><br>
+
+                <input type="submit" name="login-submit" id="login-submit" value="登入" class="submit_build">
+            </form>
+
+            <table class="Advance_Search search" style="border: 0px solid black;">
+                <tbody>
+                <tr style="height: 40px;">
+                    <td style="border: 0px solid black;">
+                        <input type="button" value="註冊 !"
+                               class="input_clear" style="margin-left: -2.5px;">
+                         
+                        <input type="button" value="忘記密碼"
+                               class="input_clear" style="margin-left: 3px;">
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <br>
+        </div>
+
+
+    </div>
+
+
+</main>
+<div id="empty-space-bar"></div> <!--  empty space for better looking  -->
+<!-- close the DB every time after the page is loaded -->
+<footer>
+    <div id="left-footer">
+        <h3>其他連結</h3>
+        <p>
+        </p>
+        <ul>
+            <li>
+                <a href="https://battlespiritsnova.com/index.php">首頁</a>
+            </li>
+            <li>
+                <a href="https://battlespiritsnova.com/about.php">網站簡介</a>
+            </li>
+            <li>
+                <a href="https://battlespiritsnova.com/policy.php">隱私權政策</a>
+            </li>
+            <li>
+                <a href="https://battlespiritsnova.com/terms.php">使用條款</a>
+            </li>
+        </ul>
+        <p></p>
+    </div>
+    <div id="right-footer">
+        <h3>聯絡我們</h3>
+        <div id="social-media-footer">
+            <ul>
+                <li>
+                    <a href="https://www.facebook.com/bsnova/" target="_blank">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/channel/UCwRaXg219IvUGV5ipttCi5Q" target="_blank">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:contact@battlespiritsnova.com">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <p class="footer_copyright">All original content on this page is © 2023 battlespiritsnova.com (BSNOVA), and may
+            not be used or reproduced without consent. BSNOVA is a fan content website of Battle Spirits. Battle Spirits
+            images and logos are trademarks of BANDAI CO.,LTD.. All rights reserved. Battle Spirits Nova is not
+            affiliated with BANDAI CO.,LTD.. Sources of card images are from <a href="https://batspi.com/index.php"
+                                                                                style="color: #777;">batspi.com</a>. Ads
+            by Google.<br></p>
+    </div>
+</footer>
+</body>
+</html>

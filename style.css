@@ -1,0 +1,2492 @@
+/* Overall general */
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    margin: 0;
+}
+h1 {
+    padding: 8px;
+    background: rgba(255,0,0,0.7);
+    border-radius: 8px;
+    margin: 0;
+    font-size: 64px;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+p {
+    line-height: 1;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+a:hover {
+    text-decoration: underline;
+    color: red;
+}
+.clearfix::after {
+    content:'';
+    display: block;
+    clear: both;
+}
+
+/* Search bar input part */
+input,
+textarea {
+    height: 32px;
+    padding: 0 16px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 18px;
+    border: 1px solid rgb(226, 226, 226);
+    border-radius: .25rem;
+    box-shadow: inset 0.5px 0px 7px -4px rgba(0,0,0,0.4);
+}
+input:focus,
+textarea:focus {
+    outline: none
+}
+
+/* Index Banner*/
+#banner {
+    top: 7px;
+    width: 100%;
+    height: 34vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: rgba(0,0,0,0.2) url('banner_background.jpg');
+    background-size: 100%;
+    background-position-y: 50px;
+    background-attachment: fixed;
+    background-position-x: center;
+    background-blend-mode: overlay;
+    color: white;
+}
+#banner h3 {
+    background: black;
+    border-radius: 8px;
+    padding: 0 8px;
+    font-size: 24px;
+}
+
+
+
+
+/* For index */
+.card{
+    width: 42%;
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-bottom: 20px;
+    /*border: 1px solid red;*/
+}
+.card .index_boxtitle{
+    font-size: 30px;
+    padding: 0;
+}
+.card .card-description{
+    padding: 0 4px;
+}
+.card-image{
+    transition: 0.4s;
+}
+.card-image:hover{
+    box-shadow: 0 10px 6px -6px #777;
+}
+.card .card-image img{
+    width: 100%;
+}
+.btn-readmore{       
+    padding: 8px 24px;
+    border: 3px solid black;
+    transition: 0.4s;
+    display: inline-block;
+    margin-bottom: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    background: white;
+    border-radius: .25rem;
+}
+.btn-readmore:hover{
+    text-decoration: none;
+    padding: 8px 36px;
+    color:red;
+    border: 3px solid red;
+}
+
+
+
+/* Search engine at right hand conner */
+#searchbox_web{
+    position: fixed;
+    right: 0;
+    top: 7px;
+    width: 300px;
+    pointer-events: none;
+    z-index: 50;
+    transition: 0.4s;
+}
+#searchbox_web input{
+    height: 40px;
+    width: 100%;
+}
+
+
+
+/* Header navigation menu */
+nav{
+    height: 55px;
+    background: #1b1b1b;
+    width: 100%;
+    margin: 0;
+    position: fixed; 
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 16px 0 0;
+    box-sizing: border-box;
+    z-index: 100;
+}
+nav a{
+    padding: 0 32px;
+    color: #eee;
+    transition: 0.4s;
+}
+nav a:hover{                   /* hover means when u point to it */
+    text-decoration: none;
+    color: red;
+}
+nav ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%; 
+    margin: 0;
+}
+nav .active{                       /* show currently which page in menu bar*/
+    font-weight: bold;
+    color: red;
+}
+
+
+
+/* To prevent page content being covered by the nav bar, reserve some space*/
+#empty-space-bar{
+    height: 55px;
+}
+#small-empty-space-bar{
+    height: 25px;
+}
+
+
+
+/* logo */
+#logo-img{
+    display: flex;
+    height: 90%;
+    background: #1b1b1b;
+    padding: 0 2%;
+    align-items: center;
+    color: white;
+    transition: 0.4s;
+}
+#logo-img img{
+    height:61px;                /* size of the logo */
+}
+#logo-img:hover{
+    background: #1b1b1b; 
+}
+
+
+
+/* appears when on phone, menu is hided inside */
+#menu-icon{
+    height: 100%;
+    font-size: 28px;
+    padding: 0 4px;
+    color: #eee;
+    display: none;              /* not display on web version */
+    align-items: center;
+}
+
+
+
+/* Search icon 放大鏡 */
+#search-icon{
+    color: white;
+    padding: 0 32px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+#search-icon:hover{            /* hover means when u point to it */
+    color: red;
+}
+
+
+
+/* slideout menu for phone version   ????  right??? not sure yet */
+#slideout-menu{
+    display: none;
+    background: #2d3436;
+    z-index: 100;
+    position: fixed;
+    transition: 0.4s;
+    margin-top: 55px;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+}
+#slideout-menu ul{
+    list-style: none;
+    padding: 0 32px;
+}
+#slideout-menu ul li{
+    padding: 8px;
+}
+#slideout-menu a{
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 18px;
+    color: white;
+}
+#slideout-menu ul li:hover a{
+    text-decoration: none;
+    color: red;
+}
+#slideout-menu input{
+    width: 95%;
+    padding: 6px;
+    font-family: 'Noto Sans TC', sans-serif; 
+    font-size: 18px;
+    text-align: center;
+}
+
+
+
+/* The big title of each page */
+section{
+    display: flex;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    flex-wrap: wrap; 
+    /*border: 1px solid red; /* here */
+}
+.section-heading{
+    font-size: 32px;
+    font-family: 'Noto Sans TC', sans-serif;
+    border-left: 3px solid black;
+    border-right: 3px solid black;
+    transition: all 0.4s;
+    display: inline-block;
+    padding: 4px 32px;
+}
+.section-heading:hover{
+    padding: 4px 48px;
+    color: white;
+    background: rgb(245, 26, 26);  
+}
+
+
+
+/* Content part (mainly for decks.php / article.php) */
+.content{
+    margin: 0px auto 30px; 
+    /*border: 1px solid rgb(255, 0, 234);   /* here */
+}
+.content .main-content{
+    width: 77%;
+    float: left;
+    margin-left: 50px;
+    /*border: 1px solid blue;  /* here */       
+}
+.content .main-content .post{
+    width: 96%;
+    height: 115px;
+    margin: 10px;
+    /*position: relative;*/
+    border: 1px solid rgb(223, 223, 223);
+}
+.content .main-content .post:hover{
+    background: #fdfdfd;
+    box-shadow: 0 8px 6px -6px #777;
+}
+.content .main-content .post .post-image{
+    width: 130px;
+    height: 95px;
+    padding: 10px;  
+    float: left;
+    transition: 0.4s;
+    object-fit: cover;
+    object-position: 0% 2%;
+    /*border: 8px solid cyan;*/
+}
+.content .main-content .post .post-preview{
+    margin-top: 3px;
+    width: 60%;
+    float: left;
+}
+.content .main-content .post .post-preview h3{
+    line-height: 0;
+    /*border: 1px solid blue;*/
+}
+.content .main-content .post .post-preview i a{
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 14px;
+}
+.content .main-content .post .post-preview a:hover{                
+    text-decoration: none;
+    color: red;
+}
+.content .main-content .post .post-preview a p:hover{                
+    text-decoration: none;
+    color: Black;
+}
+.deck_tag_html_tag{
+    display: inline-block; 
+    width: 100%; 
+    border: 0px solid pink;
+}
+.deck_tag_html_tag_shorten{
+    display: none; 
+    width: 100%; 
+    border: 0px solid pink;
+}
+.deck_name_html_tag{
+    display: inline-block; 
+    width: 100%; 
+    border: 0px solid black; 
+    font-size: 22px;
+}
+.deck_name_html_tag_shorten{
+    border: 0px solid blue;
+    display: none;
+}
+.editor_name_html_tag{
+    display: inline-block; 
+    border: 0px solid black;
+}
+.editor_name_html_tag_shorten{
+    display: none; 
+    border: 0px solid black;
+}
+.ref_date_html_tag{
+    display: inline-block; 
+    margin-right: 1.8%;
+    border: 0px solid black;
+}
+.btn-tag{    
+    font-size: 12px;
+    padding: 0px 4px;
+    transition: 0.4s;
+    cursor: pointer;
+    background: rgb(45, 123, 212);
+    color: white;
+    border-radius: .25rem;
+    border: 1px solid transparent;
+    font-family: 'Noto Sans TC', sans-serif;
+    /*border: 1px solid black;*/
+}
+.btn-tag:hover{  
+    background: white;
+    border: 1px solid red;
+}
+.content .sidebar{
+    width: 22%;
+    float: right;   
+    /*border: 1px dashed rgb(5, 163, 5); /* here */
+}
+.content .sidebar .section.topics ul{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    border-top: 1px solid #e0e0e0;
+}
+.content .sidebar .section.topics ul li a{
+    display: block;
+    padding: 2px 0px 2px 0px;
+    border-bottom: 1px solid #e0e0e0;
+}
+.content .sidebar .section.topics ul a:hover{
+    text-decoration: none;
+    color: red;
+}
+.content .sidebar .sidebar-break{
+    height: 25px;
+    /*border: 1px solid red;*/
+}
+.decks_btn{
+    float: left;
+    font-size: 14px;
+}
+.decks_btn a{
+    color: black;
+    text-decoration: none;
+    padding: 1px 8px;
+    transition: 0s;
+    margin-left: 4px;
+    background: rgb(245, 250, 255);
+    border-radius: .25rem;
+    border: .5px solid rgb(182, 182, 182);
+}
+.decks_btn a:hover{
+    transition: 0s;
+    text-decoration: none;
+    color:white;
+    background: rgb(20, 95, 180);
+}
+.mini_decks_btn a{
+    color: black;
+    text-decoration: none;
+    padding: 1px 4px;
+    transition: 0s;
+    background: rgb(245, 250, 255);
+    border-radius: .25rem;
+    border: .5px solid rgb(182, 182, 182);
+}
+.mini_decks_btn a:hover{
+    transition: 0s;
+    text-decoration: none;
+    color:white;
+    background: rgb(20, 95, 180);
+}
+.mini_decks_btn{
+    display: none;
+}
+
+
+
+/* For sidebar pop-up (Tooltip = when point to it, pop-up) */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 110px;
+    background-color: none;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: calc(100% + 12px);
+}
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 10%;
+    right: calc(100% + 3px);
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent black transparent transparent;
+}
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+/* For pop-up to display various % of 打 x 張 */
+.tooltip .diff_percent {
+    visibility: hidden;
+    width: 118px;
+    background-color: rgba(194, 225, 255, 0.98);
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 120%;
+    left: -6.5px;
+    border: 2px solid rgb(187, 187, 187);
+}
+.tooltip .diff_percent::after {
+    content: "";
+    position: absolute;
+    top: -8px;
+    right: calc(50%);
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
+}
+.tooltip:hover .diff_percent {
+    visibility: visible;
+}
+
+
+
+/* For single.php */
+.content .main-content.single{
+    font-size: 1.1em;
+    padding: 10px;
+    width: 70.2%;
+    /*border: 1px solid red;*/
+}
+.content .space-between{
+    width: 4.8%;
+    float: left; 
+    border: 1px solid transparent;
+    /*border: 1px solid blue;*/
+}
+/*.content .sidebar.single{
+    padding: 10px;
+    border: 1px solid green;
+}*/
+.content .main-content.single .post_info i a{
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 16px;
+}
+.content .main-content.single .post_info a:hover{                
+    text-decoration: none;
+    color: red;
+}
+
+
+
+/* for card search.php */
+.content .main-content.search{
+    width: 73%;
+    float: left;
+    /*border: 1px solid blue;*/       
+}
+.content .main-content .num_of_result{
+    float: right; 
+}
+.BSbigTable, .BSbigTable_search{
+    border-collapse: collapse;
+}
+.BSbigTable td, .BSbigTable_search td{
+    border: 1px solid rgb(200, 200, 200);
+    border-collapse: collapse;
+}
+.BSbigTable .BSTable td, .BSbigTable_search .BSTable_search td{
+    border: 1px solid rgb(200, 200, 200);
+    border-collapse: collapse;
+}
+.BSbigTable th, .BSbigTable_search th{
+    border: 1px solid rgb(200, 200, 200);
+    border-collapse: collapse;
+}
+.BSbigTable .BSTable .BSSymbol td, .BSbigTable_search .BSTable_search .BSSymbol td{
+    border: 0;
+}
+
+/* for table display on phone */
+.BSbigTable_search_for_phone{
+    width: 100%;
+    font-size: 14px;
+    border-collapse: collapse;
+}
+.BSbigTable_search_for_phone td{
+    border: 1px solid rgb(200, 200, 200);
+    border-collapse: collapse;
+}
+.BSbigTable_search_for_phone .BSTable_search_for_phone td{
+    border: 0px solid rgb(200, 200, 200);
+    border-collapse: collapse;
+}
+.BSbigTable_search_for_phone th{
+    border: 0px solid rgb(200, 200, 200);
+    border-collapse: collapse;
+}
+.BSbigTable_search_for_phone .BSTable_search_for_phone .BSSymbol td{
+    border: 0;
+}
+
+
+.add-btn, .del-btn {
+    padding: 2px 6px;
+    transition: 0s;
+    margin: 4px;
+}
+.search_card_small_pic{
+    width: 205px;
+    height: 300px;
+}
+
+
+
+/* for advance search in search.php */
+.Advance_Search.search{
+    font-size: 16px;
+    width: 85%;
+}
+.Advance_Search.search, .Advance_Search.search td{
+    border: 1px solid rgb(200, 200, 200);
+}
+.Advance_Search.search .input_num{
+    height: 24px;
+    width: 110px;
+    padding: 0px 8px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 16px;
+    box-shadow: inset 1px 0px 9px -4px rgba(0,0,0,0.1);
+    border-radius: 0.25rem;
+    border: 1px solid rgb(201, 201, 201);
+}
+.Advance_Search.search .input_name{
+    height: 24px;
+    width: 183px;
+    padding: 0px 8px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 16px;
+    box-shadow: inset 1px 0px 9px -4px rgba(0,0,0,0.1);
+    border-radius: 0.25rem;
+    border: 1px solid rgb(201, 201, 201);
+}
+.Advance_Search.search .input_set{
+    height: 26px;
+    width: 408.2px;
+    padding: 0px 5px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 16px;
+    box-shadow: inset 1px 0px 9px -4px rgba(0,0,0,0.1);
+    border-radius: 0.25rem;
+    border: 1px solid rgb(201, 201, 201);
+}
+.Advance_Search.search .input_block, .input_rare{
+    height: 26px;
+    width: 100px;
+    padding: 0px 8px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 16px;
+    box-shadow: inset 1px 0px 9px -4px rgba(0,0,0,0.1);
+    border-radius: 0.25rem;
+    border: 1px solid rgb(201, 201, 201);
+}
+.Advance_Search.search .input_type{
+    height: 26px;
+    width: 110px;
+    padding: 0px 8px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 16px;
+    box-shadow: inset 1px 0px 9px -4px rgba(0,0,0,0.1);
+    border-radius: 0.25rem;
+    border: 1px solid rgb(201, 201, 201);
+}
+.Advance_Search.search .input_color_nature{
+    height: 26px;
+    width: 75px;
+    padding: 0px 8px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 16px;
+    box-shadow: inset 1px 0px 9px -4px rgba(0,0,0,0.1);
+    border-radius: 0.25rem;
+    border: 1px solid rgb(201, 201, 201);
+}
+.Advance_Search.search .input_system{
+    height: 26px;
+    width: 183px;
+    padding: 0px 4px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 16px;
+    box-shadow: inset 1px 0px 9px -4px rgba(0,0,0,0.1);
+    border-radius: 0.25rem;
+    border: 1px solid rgb(201, 201, 201);
+}
+.Advance_Search.search .input_system2{
+    height: 24px;
+    width: 171px;
+    padding: 0px 10px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 16px;
+    box-shadow: inset 1px 0px 9px -4px rgba(0,0,0,0.1);
+    border-radius: 0.25rem;
+    border: 1px solid rgb(201, 201, 201);
+}
+.Advance_Search.search .input_color{
+    height: 15px;
+    width: 15px;
+    padding: 0px 8px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 16px;
+    box-shadow: inset 1px 0px 9px -4px rgba(0,0,0,0.1);
+    border-radius: 0.25rem;
+    border: 1px solid rgb(201, 201, 201);
+}
+.Advance_Search.search .input_sign{
+    height: 26px;
+    width: 54px;
+    padding: 0px 8px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 16px;
+    box-shadow: inset 1px 0px 9px -4px rgba(0,0,0,0.1);
+    border-radius: 0.25rem;
+    border: 1px solid rgb(201, 201, 201);
+}
+.Advance_Search.search .input_cost{
+    height: 24px;
+    width: 34px;
+    padding: 0px 8px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 16px;
+    box-shadow: inset 1px 0px 9px -4px rgba(0,0,0,0.1);
+    border-radius: 0.25rem;
+    border: 1px solid rgb(201, 201, 201);
+}
+.Advance_Search.search .input_reduction, .input_reduction2, .input_symbol, .input_symbol2{
+    height: 26px;
+    width: 65px;
+    padding: 0px 8px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 16px;
+    box-shadow: inset 1px 0px 9px -4px rgba(0,0,0,0.1);
+    border-radius: 0.25rem;
+    border: 1px solid rgb(201, 201, 201);
+}
+.Advance_Search.search .input_effect_jp, .input_effect2_jp, .input_effect_chin, .input_effect2_chin{
+    height: 24px;
+    width: 261px;
+    padding: 0px 8px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 16px;
+    box-shadow: inset 1px 0px 9px -4px rgba(0,0,0,0.1);
+    border-radius: 0.25rem;
+    border: 1px solid rgb(201, 201, 201);
+}
+.Advance_Search.search .card_include{
+    height: 24px;
+    width: 183px;
+    padding: 0px 8px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 16px;
+    box-shadow: inset 1px 0px 9px -4px rgba(0,0,0,0.1);
+    border-radius: 0.25rem;
+    border: 1px solid rgb(201, 201, 201);
+}
+.Advance_Search.search .input_submit:hover, .input_clear:hover{
+    background: rgb(212, 212, 212)
+}
+.effect_btn{
+    font-size: 14px;
+    height: 35px;
+}
+.effect_tab {
+    color:rgb(9, 123, 233);
+}
+.effect_tab a {
+    color:rgb(238, 44, 44);
+}
+
+
+
+/* for advance search in decks.php */
+.Advance_Search.decks{
+    font-size: 16px;
+    width: 85%;
+}
+.Advance_Search.decks, .Advance_Search.decks td{
+    border: 1px solid rgb(200, 200, 200);
+}
+.Advance_Search.decks .input_name{
+    height: 24px;
+    width: 225px;
+    padding: 0px 8px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 16px;
+    box-shadow: inset 1px 0px 9px -4px rgba(0,0,0,0.1);
+    border-radius: 0.25rem;
+    border: 1px solid rgb(201, 201, 201);
+}
+.Advance_Search.decks .input_type{
+    height: 26px;
+    width: 110px;
+    padding: 0px 8px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 16px;
+    box-shadow: inset 1px 0px 9px -4px rgba(0,0,0,0.1);
+    border-radius: 0.25rem;
+    border: 1px solid rgb(201, 201, 201);
+}
+.Advance_Search.decks .card_include{
+    height: 24px;
+    width: 225px;
+    padding: 0px 8px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 16px;
+    box-shadow: inset 1px 0px 9px -4px rgba(0,0,0,0.1);
+    border-radius: 0.25rem;
+    border: 1px solid rgb(201, 201, 201);
+}
+.Advance_Search.decks .input_submit:hover, .input_clear:hover{
+    background: rgb(212, 212, 212)
+}
+
+
+
+/* for meta.php */
+.content .main-content.meta{
+    width: 73%;
+    height: 200px;
+    /*float: left;*/
+    /*border: 1px solid blue;*/
+}
+.content .main-content .post-image{
+    width: 153px;
+    height: calc(153px*117/161);
+    /*float: left;*/
+    transition: 0.4s;
+    object-fit: cover;
+    object-position: 0% 2%;
+    /*border: 8px solid cyan;*/
+}
+.content .main-content .meta-post{
+    margin: 8.7px;
+    /*position: relative;*/
+    border: 1px solid rgb(223, 223, 223);
+    box-shadow: 4px 4px 8px -3px #777;
+    width: 153px; 
+    height: calc(153px*225/160);
+    float: left;
+}
+.content .main-content .meta-post:hover{
+    background: #fdfdfd;
+    box-shadow: 5px 5px 8px -3px rgb(18, 18, 18);
+}
+.content .main-content a:hover{
+    text-decoration: none;
+}
+
+
+
+/* for advance search in meta.php */
+.Advance_Search.meta{
+    font-size: 16px;
+}
+.Advance_Search.meta, .Advance_Search.meta td{
+    border: 1px solid rgb(200, 200, 200);
+}
+.Advance_Search.meta .input_name{
+    height: 24px;
+    width: 183px;
+    padding: 0px 8px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 16px;
+    box-shadow: inset 1px 0px 9px -4px rgba(0,0,0,0.1);
+    border-radius: 0.25rem;
+    border: 1px solid rgb(201, 201, 201);
+}
+.Advance_Search.meta .input_type{
+    height: 26px;
+    width: 110px;
+    padding: 0px 8px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 16px;
+    box-shadow: inset 1px 0px 9px -4px rgba(0,0,0,0.1);
+    border-radius: 0.25rem;
+    border: 1px solid rgb(201, 201, 201);
+}
+.Advance_Search.meta .input_submit:hover, .input_clear:hover{
+    background: rgb(212, 212, 212)
+}
+
+
+
+/* for both build.php and decklist.php */
+.each_card_build{
+    width: 120px; 
+    float: left;
+    margin-left: 5px;
+    /*border: 1px solid blue; /* */ 
+}
+.build_card_pic{
+    width: calc(120px*140/150);
+    margin-left: calc(120px*4.5/150);
+    height: calc(120px*205/150);
+}
+.content .main-content.build{
+    width: 71%;
+    float: left;
+    /*border: 1px solid blue; /* */ 
+}
+.deck_build_input_name{
+    height: 28px;
+    width: 97.5%;
+    padding: 0px 8px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 16px;
+    box-shadow: inset 1px 0px 9px -4px rgba(0,0,0,0.1);
+    border-radius: 0.25rem;
+    border: 1px solid rgb(201, 201, 201);
+}
+textarea{
+    height: 192px;
+    width: 97.5%;
+    resize: vertical;
+    padding: 0px 10px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 16px;
+    box-shadow: inset 1px 0px 9px -4px rgba(0,0,0,0.1);
+    border-radius: .25rem;
+    border: 1px solid rgb(201, 201, 201);
+}
+.content .main-content.build .space-between-button{
+    height: 0.1px;
+}
+.content .main-content.build form .checkbox{
+    height: 15px;
+    width: 20px;
+    box-shadow: inset 0px 0px 0px 0px rgba(0,0,0,0);
+}
+.content .main-content.build .submit_build{
+    color: white;
+    background: rgb(45, 123, 212);
+    font-family: 'Noto Sans TC', sans-serif;
+    width: 200px;
+}
+.content .main-content.build .submit_build:hover{
+    background: rgb(20, 95, 180);
+}
+.content .go_back_btn{
+    float: right;
+    width: 140px;
+    padding: .25rem 1rem;
+    color: white;
+    background: rgb(45, 123, 212);
+    border: 1.5px solid transparent;
+    border-radius: .25rem;
+    font-size: 16px;
+    /*font-weight: bold;*/
+    font-family: 'Noto Sans TC', sans-serif;
+    margin-right: 5.5px;
+}
+.content .go_back_btn:hover{
+    background: rgb(20, 95, 180);
+}
+.content .deck_title{
+    font-size: 45px;
+    font-family: 'Noto Sans TC', sans-serif;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+.content .analysis_title{
+    font-size: 35px;
+    font-family: 'Noto Sans TC', sans-serif;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+.decklist_btn{
+    border: 0px solid black; 
+    font-size: 14px;
+}
+.decklist_btn a{
+    color: black;
+    text-decoration: none;
+    padding: 1px 8px;
+    transition: 0s;
+    margin-left: 4px;
+    background: rgb(245, 250, 255);
+    border-radius: .25rem;
+    border: .5px solid rgb(182, 182, 182);
+}
+.decklist_btn a:hover{
+    transition: 0s;
+    text-decoration: none;
+    color:white;
+    background: rgb(20, 95, 180);
+}
+
+
+
+/* for analysis.php */
+.content .main-content.analysis{
+    width: 72%;
+    float: left;
+    /*border: 1px solid blue; /* */  
+}
+.each_card{
+    width: 120px; 
+    float: left;
+    margin-left: 5px;
+    /*border: 1px solid blue; /* */ 
+}
+.analysis_card_pic{
+    width: calc(120px*140/150);
+    margin-left: calc(120px*4.5/150);
+    height: calc(120px*205/150);
+}
+.analysis_description{
+    font-size: 16px;
+}
+
+
+
+/* For about.php */
+.content .main-content.about{
+    width: 90%; 
+    float: none; 
+    margin-left: 5%; 
+    margin-right: 5%;
+    /*border: 1px solid black; /* */
+}
+.content .main-content.about h3{
+    font-size: 28px;
+}
+
+
+
+/* for card details pop up in search.php, build.php, and decklist.php */ 
+.modal{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 10; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: 80px auto; /* adjust the height of the pop-up */
+    padding: 10px;
+    border: 1px solid #888;
+    width: 1259.52px; /* Could be more or less, depending on screen size */
+}
+/* for playtest.php pop up issue */
+.modalplaytestPC{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 10; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.modalplaytestPC-content {
+    background-color: #fefefe;
+    margin: 80px auto; /* adjust the height of the pop-up */
+    padding: 10px;
+    border: 1px solid #888;
+    width: 1259.52px; /* Could be more or less, depending on screen size */
+}
+.playtestphonepopup{
+    display: none;
+}
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover, 
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+/* for the hidden items part in search.php if result is less then 8 */
+.hidden_item {
+    display: none;
+}
+
+
+
+/* for account.php, register.php, ... */
+/* the overall formatting use the one in build.php */
+.error_message {
+    background: #fdebeb;
+    color: #e74744;
+    padding: 10px;
+    width: 94.2%;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 0.8;
+    margin-bottom: 15px;
+    margin-left: 1%
+}
+.error_message_login {
+    background: #fdebeb;
+    color: #e74744;
+    padding: 10px;
+    width: 97.3%;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 0.8;
+    margin-bottom: 15px;
+}
+.success_message {
+    background: #def2e1;
+    color: #33a868;
+    padding: 10px;
+    width: 94.2%;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 0.8;
+    margin-bottom: 15px;
+    margin-left: 1%
+}
+.success_message_login {
+    background: #def2e1;
+    color: #33a868;
+    padding: 10px;
+    width: 97.3%;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 0.8;
+    margin-bottom: 15px;
+}
+.create_deck_btn{
+    float: left;
+    font-size: 20px;
+    margin-top: 8px;
+}
+.create_deck_btn a{
+    color: white;
+    text-decoration: none;
+    padding: 6px 30px;
+    transition: 0s;
+    background: rgb(45, 123, 212);
+    border-radius: .25rem;
+    border: .5px solid rgb(182, 182, 182);
+}
+.create_deck_btn a:hover{
+    transition: 0s;
+    text-decoration: none;
+    color:white;
+    background: rgb(20, 95, 180);
+}
+
+
+
+/* For pagination */
+.total_page{
+    float: right;
+    font-size: 16px;
+}
+.pagination, .mini_pagination{
+    float: left;
+    font-size: 14px;
+}
+.pagination a, .mini_pagination a{
+    color: black;
+    text-decoration: none;
+    padding: 1px 8px;
+    transition: 0s;
+    margin: 4px;
+    background: rgb(245, 250, 255);
+    border-radius: .25rem;
+    border: .5px solid rgb(182, 182, 182);
+}
+.pagination a:hover, .mini_pagination a:hover{
+    transition: 0s;
+    text-decoration: none;
+    color:white;
+    background: rgb(20, 95, 180);
+}
+.pagination .active, .mini_pagination .active{
+    color:white;
+    background: rgb(45, 123, 212);
+    border-radius: .25rem;
+    margin: 4px;
+    border: .5px solid rgb(45, 123, 212);
+}
+.mini_pagination{
+    display: none;
+}
+
+
+
+/* ############################################################################################################################################*/
+/* For playtest.php */
+.playfield{
+    width: 100%;
+    height: 440px;
+    margin-top: 1%;
+    margin-bottom: 0.5%;
+    color: white; 
+    border: 1px solid grey;    
+}
+.bottom_zone{
+    display: inline-block; 
+    width: 100%; 
+    height: 162px; 
+}
+.handfield{
+    width: 100%;
+    height: 162px;
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
+    color: black; 
+    border: 1px solid grey;      
+    overflow-x: scroll;
+    overflow-y: hidden;
+    display: flex;
+}
+.handfieldshell{
+    display: inline-block; 
+    width: calc(100% - 80.5px);
+}
+.lifezone{
+    width: 72px;
+    height: 40px;
+    margin-top: 352px;
+    margin-left: 3px;
+    margin-bottom: 3px;
+    color: white; 
+    border: 1px solid grey;    
+    position: absolute;
+}
+.reservezone{
+    width: 72px;
+    height: 40px;
+    margin-top: 397px;
+    margin-left: 3px;
+    margin-bottom: 0.5%;
+    color: white; 
+    border: 1px solid grey;  
+    position: absolute;  
+}
+.counterzone{
+    width: 72px;
+    height: 40px;
+    margin-top: 352px;
+    margin-left: calc(96% - 75.5px);
+    margin-bottom: 3px;
+    color:rgb(41, 143, 238);
+    border: 1px solid grey;    
+    position: absolute;
+}
+.coregravezone{
+    width: 72px;
+    height: 40px;
+    margin-top: 397px;
+    margin-left: calc(96% - 75.5px);
+    margin-bottom: 0.5%;
+    color: white; 
+    border: 1px solid grey;  
+    position: absolute;  
+}
+.currentdeckcount{
+    width: 102px;
+    height: 24px;
+    margin-top: 3px;
+    margin-left: calc(96% - 105px);
+    margin-bottom: 0.5%;
+    color: white; 
+    border: 0px solid grey;  
+    position: absolute;  
+}
+.currenthandcount{
+    width: 102px;
+    height: 24px;
+    margin-top: 23px;
+    margin-left: calc(96% - 105px);
+    margin-bottom: 0.5%;
+    color: white; 
+    border: 0px solid grey;  
+    position: absolute;  
+}
+.add_life_btn {
+    margin-top: 355px;
+    margin-left: 82px;
+    width: 16px; 
+    height: 16px;
+    position: absolute;
+    cursor: pointer;
+}
+.dec_life_btn {
+    margin-top: 355px;
+    margin-left: 102px;
+    width: 16px; 
+    height: 16px;
+    position: absolute;
+    cursor: pointer;
+}
+.take_life_btn {
+    margin-top: 376px;
+    margin-left: 82px;
+    width: 36px; 
+    height: 17px;
+    position: absolute;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.add_reserve_btn {
+    margin-top: 400px;
+    margin-left: 82px;
+    width: 16px; 
+    height: 16px;
+    position: absolute;
+    cursor: pointer;
+}
+.dec_reserve_btn {
+    margin-top: 400px;
+    margin-left: 102px;
+    width: 16px; 
+    height: 16px;
+    position: absolute;
+    cursor: pointer;
+}
+.pay_cost_btn {
+    margin-top: 421px;
+    margin-left: 82px;
+    width: 36px; 
+    height: 17px;
+    position: absolute;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.add_counter_btn {
+    margin-top: 355px;
+    margin-left: calc(96% - 116px);
+    width: 16px; 
+    height: 16px;
+    position: absolute;
+    cursor: pointer;
+}
+.dec_counter_btn {
+    margin-top: 355px;
+    margin-left: calc(96% - 96px);
+    width: 16px; 
+    height: 16px;
+    position: absolute;
+    cursor: pointer;
+}
+.reset_counter_btn {
+    margin-top: 376px;
+    margin-left: calc(96% - 116px);
+    width: 36px; 
+    height: 17px;
+    position: absolute;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.add_coregrave_btn {
+    margin-top: 400px;
+    margin-left: calc(96% - 116px);
+    width: 16px; 
+    height: 16px;
+    position: absolute;
+    cursor: pointer;
+}
+.dec_coregrave_btn {
+    margin-top: 400px;
+    margin-left: calc(96% - 96px);
+    width: 16px; 
+    height: 16px;
+    position: absolute;
+    cursor: pointer;
+}
+.back_reserve_btn {
+    margin-top: 421px;
+    margin-left: calc(96% - 116px);
+    width: 36px; 
+    height: 17px;
+    position: absolute;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.card_core_display {
+    margin-top: 0px;
+    margin-left: 21px;
+    display: none;
+}
+.add_core_btn {
+    width: 16px; 
+    height: 16px;
+    cursor: pointer;
+}
+.dec_core_btn {
+    width: 16px; 
+    height: 16px;
+    cursor: pointer;
+}
+.cardcore_num{
+    font-size: 20px;
+    display: inline-block;
+    margin-top: -150px;
+    width: 24px;
+    color: white; 
+}
+.reservezone_num, .lifezone_num, .coregravezone_num {
+    margin-top: -43px;
+    margin-left: 28px;
+    font-size: 30px;
+}
+.counterzone_num{
+    margin-top: -4px;
+    font-size: 30px;
+}
+.currentdeckcountinfo{
+    font-size: 16px;
+}
+.currenthandcountinfo{
+    font-size: 16px;
+}
+.core{
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    margin-top: 4.5px;
+    width: 30px;
+    height: 30px;
+}
+.soulcore{
+    top: 471.5px;
+    left: 160px;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    position: absolute;
+    cursor: pointer;
+    z-index: 2;
+}
+.core_pic_on_card{
+    width: 40px;
+    height: 40px;
+    top: 53px;
+    right: 29px;
+    position: absolute;
+    z-index: 1;
+}
+.theCard{
+    width: 100px;
+    height: 144px;
+    margin: 1.4px 1.4px 1.4px 1.4px;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+.theCardupperpart{
+    width: 100px;
+    height: 144px;
+    margin: 1.4px 1.4px 1.4px 1.4px;
+}
+.playtest_card_pic{
+    width: 100px;
+    height: 144px;
+    border-radius: 5.5px;
+}
+.menu_list {
+    display: inline-block; 
+    width: 70px;  
+    position: absolute;
+    margin-left: 13px;
+    margin-top: 0.4%;
+}
+.menu_list_btn {
+    cursor: pointer; 
+    margin-bottom: 2.5px;
+    height: 30.9px;
+}
+.menu_list_last_btn {
+    cursor: pointer; 
+    height: 30.9px;
+}
+.return_top_phone {
+    display: none;
+}
+.return_btm_phone {
+    display: none;
+}
+.return_top_pc {
+    margin-right: 4px;
+    font-size: 14px;
+    height: 35px;
+    float: right;
+}
+.return_btm_pc {
+    font-size: 14px;
+    height: 35px;
+    float: right;
+}
+/* For playtest Dropdown Btn (Hidden by Default) */
+.detailBtn, .hidebtn, .untapbtn, .tapbtn, .flipbtn  {
+    width: 20.5px; 
+    height: 20.5px;
+}
+/* For playtest Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    color: black;
+    top: 0px;
+    right: -2.8px;
+}
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: white;
+    padding: 0.5px 0.5px;
+    text-decoration: none;
+    display: block;
+}
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    filter: brightness(60%);
+}
+/* Show the dropdown menu when click the card (playtest fx_7 */
+.show {
+    display: block;
+}
+/* scrollbar width (for verticle) and height (for horizontal) */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 15px;
+}
+/* scrollbar Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+/* scrollbar Handle */
+::-webkit-scrollbar-thumb {
+    background: #AAA; 
+}
+/* scrollbar Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #999; 
+}
+/* for playtest instruction */
+.playtest_instruction{
+    color:white; 
+    font-size: 32px; 
+    font-weight: bold;
+}
+
+
+/* these are sth related but not useful currently (now is only be used for useless_old_playtest.php)
+.mirageZone, .blastZone, .deckZone, .graveZone {
+    margin-left: 5px;
+    margin-right: 3.5px;
+    margin-top: 5px;
+    width: calc(100px*145/150);
+    height: calc(100px*205/150);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    background-color:grey;
+}
+.lifeZone, .counterZone {
+    margin-left: 5px;
+    margin-right: 3.5px;
+    margin-top: 5px;
+    width: calc(100px*145/150);
+    height: calc(50px*205/150);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    background-color:grey;
+}
+.reserveZone, .coregraveZone {
+    margin-left: 5px;
+    margin-right: 3.5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: calc(100px*145/150);
+    height: calc(50px*205/150);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    background-color:grey;
+}
+.mainZone {
+    width: 80%;
+    height: 439px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    background-color:black;
+}
+.handZone {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 99.1%;
+    height: calc(100px*205/150);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    background-color:grey;
+}
+*/
+/* ############################################################################################################################################*/
+
+
+
+/* Footer */
+footer{
+    background: #1b1b1b;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    /*padding: 8px;*/
+    color: #777;
+    display: flex;
+    /*border: 1px solid rgb(255, 94, 0); /* Here */
+}
+.footer_copyright{
+    padding: 0px 4% 0px 4%; 
+    text-align: justify;
+    font-size: 14px;
+}
+footer a{
+    color: white;
+}
+footer #left-footer{
+    flex: 0.7;
+    border-right: 1px solid white;
+    padding-left: 32px;
+}
+footer #left-footer ul{
+    padding: 0;
+    list-style: none;
+    line-height: 2;
+}
+footer #left-footer ul li:hover a{
+    text-decoration: none;
+    color: red;
+}
+footer #right-footer{
+    flex: 2;
+    padding: 1px;
+    text-align: center;
+}
+footer #social-media-footer a .fa-facebook,
+footer #social-media-footer a .fa-youtube,
+footer #social-media-footer a .fa-envelope{
+    color: white;
+    transition: 0.4s;
+}
+footer #social-media-footer ul{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    padding: 0;
+}
+footer #social-media-footer ul li{
+    font-size: 48px;
+    padding: 16px;
+    transition: 0.4s;
+}
+footer #social-media-footer ul li:hover a .fa-youtube{
+    color: rgb(245, 26, 26);
+}
+footer #social-media-footer ul li:hover a .fa-facebook{
+    color: #426dca;
+}
+footer #social-media-footer ul li:hover a .fa-envelope{
+    color: #bbb;
+}
+
+
+
+/* Keep the formating of main (must put this after 'content' to overwrite) */
+main{                                           
+    margin: 0px; 
+    width: 96%;
+    padding: 0px 2% 0px 2%;
+    /*border: 1px solid rgb(197, 21, 144); /* here */
+}
+footer{
+    margin: 0px 5% 0px 5%;   
+    width: 90%;                         
+}
+
+
+
+
+@media (max-width: 1300px){ 
+    /* For meta.php */
+    .content .main-content .meta-post{
+        width: 150px; 
+        height: 215px; /*fixed no change*/
+    }
+    .content .main-content .post-image{
+        width: 150px;
+        height: calc(150px*117/161);
+    }
+
+    /* For playtest.php modal popup */
+    .modalplaytestPC{
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 10; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+    .modalplaytestPC-content {
+        background-color: #fefefe;
+        margin: 80px auto 0px; /* adjust the height of the pop-up */
+        padding: 10px;
+        border: 1px solid #888;
+        width: 333px; /* Could be more or less, depending on screen size */
+    }
+    .playtestPCpopup {
+        display: none;
+    }
+    .playtestphonepopup {
+        display: inline;
+    }
+    .return_top_phone {
+        display: inline;
+        margin-top: 10px;
+        margin-left: 2px;
+        cursor: pointer;
+    }
+    .return_btm_phone {
+        display: inline;
+        cursor: pointer;
+    }
+    /* For playtest.php in general, onclick btn and cards on phone */
+    .playfield{
+        width: 100%;
+        height: 420px;
+        margin-top: 1%;
+        margin-bottom: 0.5%;
+        color: white; 
+        border: 1px solid grey;    
+    }
+    .handfield{
+        width: 100%;
+        height: 110px;
+        margin-top: 0.5%;
+        margin-bottom: 0;
+        color: black; 
+        border: 1px solid grey;      
+        overflow-x: scroll;
+        overflow-y: hidden;
+        display: flex;
+    }
+    .handfieldshell{
+        display: inline-block; 
+        width: 100%;
+    }
+    .theCard, .theCardupperpart{
+        width: calc(100px*0.643);
+        height: calc(144px*0.643);
+        margin: 1.4px 1.4px 1.4px 1.4px;
+    }
+    .playtest_card_pic{
+        width: calc(100px*0.643);
+        height: calc(144px*0.643);
+        border-radius: calc(5.5px*0.643);
+    }
+    .menu_list {
+        display: block;
+        width: 98%;
+        margin-left: 0;
+        margin-top: 0.35%;
+        position: absolute;
+    }
+    .detailBtn, .hidebtn, .untapbtn, .tapbtn, .flipbtn  {
+        width: calc(20.5px*0.9);
+        height: calc(20.5px*0.9);
+    }
+    .dropdown-content a {
+        padding: 0.01px 0.01px;
+    }
+    /* For playtest.php core btn of card */
+    .card_core_display {
+        margin-top: 0px;
+        margin-left: 21px;
+    }
+    .add_core_btn {
+        margin-left: -18px;
+    }
+    .cardcore_num{
+        margin-left: 0px;
+        width: 22px;
+        color: white; 
+    }
+    /* For playtest.php core btn of all zone on field */
+    .lifezone{
+        width: 68px;
+        height: 28.5px;
+        margin-top: 317.5px;
+        margin-left: 3px;
+        margin-bottom: 0.5%;
+        color: white; 
+        border: 1px solid grey;  
+        position: absolute;  
+    }
+    .reservezone{
+        width: 68px;
+        height: 28.5px;
+        margin-top: 369.5px;
+        margin-left: 3px;
+        margin-bottom: 0.5%;
+        color: white; 
+        border: 1px solid grey;  
+        position: absolute;  
+    }
+    .counterzone{
+        width: 68px;
+        height: 28.5px;
+        margin-top: 317.5px;
+        margin-left: calc(96% - 71.5px);
+        margin-bottom: 3px;
+        color:rgb(41, 143, 238);
+        border: 1px solid grey;    
+        position: absolute;
+    }
+    .coregravezone{
+        width: 68px;
+        height: 28.5px;
+        margin-top: 369.5px;
+        margin-left: calc(96% - 71.5px);
+        margin-bottom: 0.5%;
+        color: white; 
+        border: 1px solid grey;  
+        position: absolute;  
+    }
+    .add_life_btn {
+        margin-top: 351px;
+        margin-left: 4.5px;
+        width: 14px; 
+        height: 14px;
+        position: absolute;
+        cursor: pointer;
+    }
+    .dec_life_btn {
+        margin-top: 351px;
+        margin-left: 22.5px;
+        width: 14px; 
+        height: 14px;
+        position: absolute;
+        cursor: pointer;
+    }
+    .take_life_btn {
+        margin-top: 351px;
+        margin-left: 41px;
+        width: 32.4px; 
+        height: 15.3px;
+        position: absolute;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+    .add_reserve_btn {
+        margin-top: 403px;
+        margin-left: 4.5px;
+        width: 14px; 
+        height: 14px;
+        position: absolute;
+        cursor: pointer;
+    }
+    .dec_reserve_btn {
+        margin-top: 403px;
+        margin-left: 22.5px;
+        width: 14px; 
+        height: 14px;
+        position: absolute;
+        cursor: pointer;
+    }
+    .pay_cost_btn {
+        margin-top: 403px;
+        margin-left: 41px;
+        width: 32.4px; 
+        height: 15.3px;
+        position: absolute;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+    .add_counter_btn {
+        margin-top: 351px;
+        margin-left: calc(96% - 33px);
+        width: 14px; 
+        height: 14px;
+        position: absolute;
+        cursor: pointer;
+    }
+    .dec_counter_btn {
+        margin-top: 351px;
+        margin-left: calc(96% - 16px);
+        width: 14px; 
+        height: 14px;
+        position: absolute;
+        cursor: pointer;
+    }
+    .reset_counter_btn {
+        margin-top: 351px;
+        margin-left: calc(96% - 70.5px);
+        width: 32.4px; 
+        height: 15.3px;
+        position: absolute;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+    .add_coregrave_btn {
+        margin-top: 403px;
+        margin-left: calc(96% - 33px);
+        width: 14px; 
+        height: 14px;
+        position: absolute;
+        cursor: pointer;
+    }
+    .dec_coregrave_btn {
+        margin-top: 403px;
+        margin-left: calc(96% - 16px);
+        width: 14px; 
+        height: 14px;
+        position: absolute;
+        cursor: pointer;
+    }
+    .back_reserve_btn {
+        margin-top: 403px;
+        margin-left: calc(96% - 70.5px);
+        width: 32.4px; 
+        height: 15.3px;
+        position: absolute;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+    .reservezone_num, .lifezone_num, .coregravezone_num {
+        margin-top: -33.9px;
+        margin-left: 20px;
+        font-size: 22px;
+    }
+    .counterzone_num{
+        margin-top: -3.5px;
+        font-size: 22px;
+    }
+    .core{
+        -webkit-user-drag: none;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        margin-top: 0px;
+        margin-left: 4px;
+        width: 26px;
+        height: 26px;
+    }
+    .soulcore{
+        top: 438px;
+        left: 103px;
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        position: absolute;
+        cursor: pointer;
+        z-index: 2;
+    }
+    .playtest_instruction{
+        margin-top: 26px;
+    }
+}
+
+@media (max-width: 1240px){ 
+    nav ul{
+        display: none;
+    }
+    #menu-icon{
+        display: flex;
+    }
+    #slideout-menu {
+        display: block; 
+    }
+    #searchbox_web{
+        display: none;
+    }
+    #logo-img{
+        padding: 0 0px;
+        margin: 0 -36px;
+    }
+    #banner{
+        background-size: 1200px;
+        background-position-y: 50px;
+    }
+
+    /* For Footer */
+    footer{
+        flex-direction: column;
+        text-align: center;
+    }
+    footer #left-footer{
+        flex: 1;
+        border-right: 0;
+        padding-left: 0;
+    }
+    footer #right-footer{
+        background: rgb(224, 224, 224);
+        color: black;
+    }
+    footer #right-footer a{
+        color: black;
+    }
+    footer #social-media-footer a .fa-facebook,
+    footer #social-media-footer a .fa-youtube,
+    footer #social-media-footer a .fa-envelope{
+        color: black;
+        transition: 0.4s;
+    }
+    .footer_copyright{
+        font-size: 12px;
+    }
+
+    /* For main content frame and sidebar */
+    .content .main-content.search, .content .main-content.meta, .content .main-content.build{
+        width: 100%;
+        float: none;
+        margin-left: 0px;
+    }
+    .content .sidebar{
+        width: 90%; 
+        float: left;   
+        padding-left: 4.9%;
+    }
+
+    /* For analysis.php, decklist.php, build.php */
+    .content .main-content.analysis{
+        width: 100%;
+        float: none;
+        margin-left: 0px;
+    }
+    .each_card{
+        width: 115px; 
+        float: left;
+        margin-left: 0px;
+        /*border: 1px solid blue; /* */ 
+    }
+    .analysis_card_pic{
+        width: calc(115px*140/150);
+        margin-left: calc(115px*4.5/150);
+        height: calc(115px*205/150);
+    }
+    .each_card_build{
+        width: 57.5px; 
+        float: left;
+        margin-left: 0px;
+        /*border: 1px solid blue; /* */ 
+    }
+    .build_card_pic{
+        width: calc(57.5px*140/150);
+        margin-left: calc(57.5px*4.5/150);
+        height: calc(57.5px*205/150);
+    }
+    .analysis_description{
+        font-size: 14px;
+    }
+    .content .go_back_btn{
+        float: right;
+        width: 70px;
+        margin-left: 20px;
+        margin-right: 0px;
+    }
+
+    /* For analysis.php popup showing different percentage */
+    .tooltip .diff_percent {
+        width: 108px;
+        left: -8.3px;
+        top: 130%;
+    }
+}
+
+@media (max-width: 940px){ 
+    /* For search.php card table part */
+    .BSbigTable_search{
+        display: none;
+    }
+    .add-btn, .del-btn {
+        padding: 2px 6px;
+        transition: 0s;
+        margin: 4px;
+    }
+    .search_card_small_pic_for_phone{
+        width: 115px;
+        height: calc(115px*300/205);
+    }
+    .search_card_small_pic{
+        display: none;
+    }
+    .effect_btn{
+        margin-top: 1.8px;
+        font-size: 13.5px;
+        height: 27.5px;
+    }
+    .display_what_u_searched{
+        display: none;
+    }
+}
+@media (min-width: 941px){ 
+    .whole_search_table_for_phone, .switch_effect_for_phone, .display_what_u_searched_for_phone{
+        display: none;
+    }
+}
+
+@media (max-width: 940px){ 
+    /* For pagination */
+    .mini_pagination{
+        display: inline;
+    }
+    .pagination{
+        display: none;
+    }
+}
+
+@media (max-width: 850px){ 
+    /* For index "card" */
+    .card{
+        width: 95%;
+        padding-left: 3%;
+        padding-right: 0%;
+        padding-bottom: 20px;
+    }
+}
+
+@media (max-width: 830px){ 
+    /* For decks.php */
+    .Advance_Search.decks{
+        width: 97%;
+    }
+    .content .main-content .post{
+        font-size: 12px;
+        height: 105px;
+    }
+    .content .main-content .post .post-preview{
+        width: 70%;
+        margin-top: 0px;
+    }
+    .content .main-content .post .post-preview i a{
+        font-family: 'Noto Sans TC', sans-serif;
+        font-size: 12px;
+    }
+    .content .main-content .post .post-image{
+        width: 100px;
+        height: calc(100px*95/130);
+        padding: 5px;  
+    }
+    .deck_tag_html_tag{
+        display: none;
+    }
+    .deck_tag_html_tag_shorten{
+        display: inline-block; 
+    }
+    .deck_name_html_tag{
+        display: none;
+    }
+    .deck_name_html_tag_shorten{
+        font-size: 18px;
+        display: flex;
+    }
+    .editor_name_html_tag{
+        display: none;
+    }
+    .editor_name_html_tag_shorten{
+        display: inline-block;
+    }
+    .ref_date_html_tag{
+        width: 100%; 
+        margin-right: 0%;
+    }
+    .decks_btn{
+        display: none; 
+    }
+    .mini_decks_btn{
+        display: flex;
+    }
+}
+
+@media (max-width: 730px){ 
+    /* For search.php search engine (and little bit for other search engine)*/
+    .Advance_Search.search{
+        font-size: 14px;
+        width: 100%;
+    }
+    .Advance_Search.search .input_num, .Advance_Search.search .input_name{
+        height: 20px;
+        width: 85px;
+        padding: 0px 6px;
+        font-family: 'Noto Sans TC', sans-serif;
+        font-size: 14px;
+        box-shadow: inset 1px 0px 9px -4px rgba(0,0,0,0.1);
+        border-radius: 0.25rem;
+        border: 1px solid rgb(201, 201, 201);
+    }
+    .Advance_Search.search .input_set{
+        height: 22px;
+        width: 267.5px;
+        padding: 0px 2px;
+        font-family: 'Noto Sans TC', sans-serif;
+        font-size: 14px;
+        box-shadow: inset 1px 0px 9px -4px rgba(0,0,0,0.1);
+        border-radius: 0.25rem;
+        border: 1px solid rgb(201, 201, 201);
+    }
+    .Advance_Search.search .input_block, .input_rare, .Advance_Search.search .input_type{
+        height: 22px;
+        width: 99px;
+        padding: 0px 2px;
+        font-family: 'Noto Sans TC', sans-serif;
+        font-size: 14px;
+        box-shadow: inset 1px 0px 9px -4px rgba(0,0,0,0.1);
+        border-radius: 0.25rem;
+        border: 1px solid rgb(201, 201, 201);
+    }
+    .Advance_Search.search .input_color_nature{
+        height: 22px;
+        width: 75px;
+        padding: 0px 6px;
+        font-family: 'Noto Sans TC', sans-serif;
+        font-size: 14px;
+        box-shadow: inset 1px 0px 9px -4px rgba(0,0,0,0.1);
+        border-radius: 0.25rem;
+        border: 1px solid rgb(201, 201, 201);
+    }
+    .Advance_Search.search .input_system{
+        height: 22px;
+        width: 99px;
+        padding: 0px 2.65px;
+        font-family: 'Noto Sans TC', sans-serif;
+        font-size: 14px;
+        box-shadow: inset 1px 0px 9px -4px rgba(0,0,0,0.1);
+        border-radius: 0.25rem;
+        border: 1px solid rgb(201, 201, 201);
+    }
+    .Advance_Search.search .input_system2{
+        height: 20px;
+        width: 95px;
+        padding: 0px 6.3px;
+        font-family: 'Noto Sans TC', sans-serif;
+        font-size: 14px;
+        box-shadow: inset 1px 0px 9px -4px rgba(0,0,0,0.1);
+        border-radius: 0.25rem;
+        border: 1px solid rgb(201, 201, 201);
+    }
+    .Advance_Search.search .input_color{
+        height: 15px;
+        width: 15px;
+        padding: 0px 6px;
+        font-family: 'Noto Sans TC', sans-serif;
+        font-size: 14px;
+        box-shadow: inset 1px 0px 9px -4px rgba(0,0,0,0.1);
+        border-radius: 0.25rem;
+        border: 1px solid rgb(201, 201, 201);
+    }
+    .Advance_Search.search .input_sign{
+        height: 22px;
+        width: 48.5px;
+        padding: 0px 6px;
+        font-family: 'Noto Sans TC', sans-serif;
+        font-size: 14px;
+        box-shadow: inset 1px 0px 9px -4px rgba(0,0,0,0.1);
+        border-radius: 0.25rem;
+        border: 1px solid rgb(201, 201, 201);
+    }
+    .Advance_Search.search .input_cost{
+        height: 20px;
+        width: 33.5px;
+        padding: 0px 6px;
+        font-family: 'Noto Sans TC', sans-serif;
+        font-size: 14px;
+        box-shadow: inset 1px 0px 9px -4px rgba(0,0,0,0.1);
+        border-radius: 0.25rem;
+        border: 1px solid rgb(201, 201, 201);
+    }
+    .Advance_Search.search .input_reduction, .input_reduction2, .input_symbol, .input_symbol2{
+        height: 22px;
+        width: 48px;
+        padding: 0px 4px;
+        font-family: 'Noto Sans TC', sans-serif;
+        font-size: 13px;
+        box-shadow: inset 1px 0px 9px -4px rgba(0,0,0,0.1);
+        border-radius: 0.25rem;
+        border: 1px solid rgb(201, 201, 201);
+    }
+    .Advance_Search.search .input_effect_jp, .input_effect2_jp, .input_effect_chin, .input_effect2_chin{
+        height: 20px;
+        width: 216px;
+        padding: 0px 6px;
+        font-family: 'Noto Sans TC', sans-serif;
+        font-size: 14px;
+        box-shadow: inset 1px 0px 9px -4px rgba(0,0,0,0.1);
+        border-radius: 0.25rem;
+        border: 1px solid rgb(201, 201, 201);
+    }
+    .Advance_Search.search .card_include{
+        height: 20px;
+        width: 183px;
+        padding: 0px 6px;
+        font-family: 'Noto Sans TC', sans-serif;
+        font-size: 14px;
+        box-shadow: inset 1px 0px 9px -4px rgba(0,0,0,0.1);
+        border-radius: 0.25rem;
+        border: 1px solid rgb(201, 201, 201);
+    }
+
+    /* For decks.php and account.php, futher adjust the post-preview for better looking */
+    .content .main-content .post .post-preview{
+        width: 65%;
+        margin-top: 0px;
+    }
+
+    /* For about.php */
+    .content .main-content.about{
+        font-size: 13.5px;
+    }
+    .content .main-content.about h3{
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 615.5px){ 
+    /* For build.php textarea for inputting deck description*/
+    textarea, .deck_build_input_name{
+        width: 93.5%;
+    }
+    /* For error message in account.php, register.php, password.php, reset.php */
+    .error_message, .success_message{
+        width: 93.5%;
+        margin-left: 0.7%;
+    }
+    .error_message_login, .success_message_login{
+        width: 93.5%;
+        /*margin-left: 0.6%;*/
+    }
+    /* For decklist.php deck title */
+    .content .deck_title{
+        font-size: 30px;
+        font-family: 'Noto Sans TC', sans-serif;
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+    .content .analysis_title{
+        font-size: 30px;
+        font-family: 'Noto Sans TC', sans-serif;
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+    /* For playtest.php menu btn e.g. draw a card */
+    .menu_list_btn {
+        cursor: pointer; 
+        margin-bottom: 2.5px;
+        font-size: 12.5px;
+        width: 18.9%;
+        height: 22px;
+    }
+    .menu_list_last_btn {
+        cursor: pointer; 
+        font-size: 12.5px;
+        width: 18.9%;
+        height: 22px;
+    }
+}
+
+
+
+/* Organise the 排版 of pic and words and so on...  
+@media (min-width: 720px){
+    main{
+        width: 83%
+    }
+    footer{
+        margin: 0 auto;
+        width: 88%;                            
+    }
+    .card{
+        width: 45%
+    }
+    .card .card-image img{
+        width: 100%
+    }
+}
+@media (max-width: 719px){
+    main{
+        width: 83%;
+    }
+    section{
+        flex-direction: column;
+    }
+    .card,
+    .card .card-image img{
+        width: 100%;                      
+    }
+    footer{
+        flex-direction: column;
+        text-align: center;
+    }
+    footer #left-footer{
+        flex: 1;
+        border-right: 0;
+        padding-left: 0;
+    }
+    footer #right-footer{
+        border-radius: 0.5rem;
+        background: #eee;
+        color: black;
+    }
+    footer #right-footer a{
+        color: black;
+    }
+    footer #social-media-footer a .fa-facebook,
+    footer #social-media-footer a .fa-youtube,
+    footer #social-media-footer a .fa-github{
+        color: black;
+        transition: 0.4s;
+    }
+}
+@media (max-width: 670px){
+    main{
+        width: 90%;
+    }
+    h1{
+        font-size: 48px;
+    }
+    #banner h3{
+        font-size: 18px;
+    }
+    #logo-img{
+        padding: 0;
+    }
+}
+
+@media (max-width: 905px){
+    .content .main-content.meta{
+        width: 100%;
+    }
+    .content .sidebar.meta{
+        width: 90%;
+        float: left;   
+        height: 500px;
+        padding-left: 20px;
+    }
+}
+@media (max-width: 620px){
+    .content .main-content .meta-post{
+        width: 185px; 
+        height: 240px;
+        padding: 2px, 2px,2px,2px;
+    }
+    .content .main-content .post-image{
+        width: 185px;
+        height: 135.2px;
+    }
+}
+*/
